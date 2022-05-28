@@ -1,33 +1,20 @@
 # rc-captcha-input
 
-## Getting Started
+## Captcha
 
-Install dependencies,
+### 基础使用
+
+1. 安装依赖
 
 ```bash
-$ npm i
+yarn add rc-captcha-input
+# npm i rc-captcha-input
 ```
 
-Start the dev server,
+2. 使用
 
-```bash
-$ npm start
-```
+```js
+import Captcha from 'rc-captcha-input';
 
-Build documentation,
-
-```bash
-$ npm run docs:build
-```
-
-Run test,
-
-```bash
-$ npm test
-```
-
-Build library via `father-build`,
-
-```bash
-$ npm run build
+<Captcha />;
 ```
