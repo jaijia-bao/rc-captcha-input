@@ -80,7 +80,8 @@ const Captcha: React.FC<ICaptchaProps> = (props) => {
     onChange?.(tempValue);
   };
 
-  const handleCodeBoxClick = () => {
+  const handleCodeBoxClick = (e: any) => {
+    e.preventDefault();
     inputRef.current?.focus();
     setFocus(true);
   };
@@ -94,7 +95,7 @@ const Captcha: React.FC<ICaptchaProps> = (props) => {
   return (
     <div className={`captcha captcha-theme-${theme} ${className || ''}`} style={style}>
       {/* 展示部分 */}
-      <div className="code-box" style={gutterStyle} onClick={handleCodeBoxClick}>
+      <div className="code-box" style={gutterStyle} onMouseDown={handleCodeBoxClick}>
         {codeArray.map((item, index, array) => {
           const prevItemValue = index === 0 ? '-1' : array[index - 1]; // 第一项视为前一项有值
           const isItemActive = isFocused && !!prevItemValue && !item; // Input 闪烁条展示在前一项有值且当前项为空的位置
