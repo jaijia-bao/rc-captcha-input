@@ -1,8 +1,8 @@
 {
   "private": false,
   "name": "rc-captcha-input",
-  "version": "0.3.0",
-  "description": "React验证码输入组件, 兼容PC/H5展示",
+  "version": "1.0.0",
+  "description": "React验证码输入组件, 支持PC/H5展示",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaijia-bao/rc-captcha-input.git"
@@ -27,7 +27,7 @@
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs",
+    "docs:deploy": "gh-pages -d docs-dist",
     "build": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",

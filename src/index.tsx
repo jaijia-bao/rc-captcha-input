@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, CSSProperties } from 'react';
 
 import './index.less';
 
@@ -32,6 +32,8 @@ interface ICaptchaProps {
    * @default           false
    */
   autoFocus?: boolean;
+  className?: string | undefined;
+  style?: CSSProperties | undefined;
 }
 
 /** 验证码输入框 */
@@ -42,6 +44,8 @@ const Captcha: React.FC<ICaptchaProps> = (props) => {
     length = DEFAULT_LENGTH,
     autoFocus = false,
     theme = 'line',
+    className,
+    style,
   } = props;
   // 组件内部维护的输入框输入值
   const [inputValue, setInputValue] = useState('');
@@ -88,7 +92,7 @@ const Captcha: React.FC<ICaptchaProps> = (props) => {
   }, [length]);
 
   return (
-    <div className={`captcha captcha-theme-${theme}`}>
+    <div className={`captcha captcha-theme-${theme} ${className || ''}`} style={style}>
       {/* 展示部分 */}
       <div className="code-box" style={gutterStyle} onClick={handleCodeBoxClick}>
         {codeArray.map((item, index, array) => {
